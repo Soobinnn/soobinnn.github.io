@@ -1,10 +1,10 @@
 ---
 layout: list
-title: Shopping
-slug: shopping
+title: Study
+slug: study
 menu: true
 submenu: false
 order: 6
 description: >
-  쇼핑목록을 공유합니다.
+  Study
 ---
