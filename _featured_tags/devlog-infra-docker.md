@@ -1,8 +1,8 @@
 ---
 layout: tag-blog
-title: Infra
-slug: infra
-category: devlog
+title: Docker
+slug: docker
+category: infra
 menu: true
 order: 2
 ---
