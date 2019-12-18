@@ -4,5 +4,6 @@ title: Docker
 slug: docker
 category: infra
 menu: false
-order: 2
+order: 1
+header-img: "/img/meteor-logo.png"
 ---

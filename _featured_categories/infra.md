@@ -1,10 +1,10 @@
 ---
 layout: list
-title: Documents
-slug: doc
+title: Infra
+slug: infra
 menu: true
 submenu: true
 order: 7
 description: >
-  문서.
+  Web Infra Architecture
 ---

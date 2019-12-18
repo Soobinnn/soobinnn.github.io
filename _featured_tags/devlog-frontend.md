@@ -1,9 +1,8 @@
 ---
 layout: tag-blog
-title: Infra
-slug: infra
+title: <<-- Front-End --->>
+slug: frontend
 category: devlog
 menu: false
-submenu: true
-order: 2
+order: 1
 ---
