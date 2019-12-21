@@ -1,6 +1,6 @@
 ---
 layout: tag-blog
-title: <<-- Front-End --->>
+title: ----- Front-End -----
 slug: frontend
 category: devlog
 menu: false

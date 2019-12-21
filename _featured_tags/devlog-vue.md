@@ -1,6 +1,6 @@
 ---
 layout: tag-blog
-title: Vue
+title: Vue.js
 slug: vue
 category: devlog
 menu: false

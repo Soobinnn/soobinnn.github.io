@@ -1,6 +1,6 @@
 ---
 layout: tag-blog
-title: React
+title: React.js
 slug: react
 category: devlog
 menu: false

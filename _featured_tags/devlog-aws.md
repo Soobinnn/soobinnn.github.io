@@ -4,6 +4,6 @@ title: AWS
 slug: aws
 category: devlog
 menu: false
-order: 4
+order: 8
 header-img: "/img/aws-logo.png"
 ---

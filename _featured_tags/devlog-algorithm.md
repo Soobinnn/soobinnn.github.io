@@ -4,5 +4,5 @@ title: Algorithm
 slug: algorithm
 category: devlog
 menu: false
-order: 5
+order: 8
 ---
