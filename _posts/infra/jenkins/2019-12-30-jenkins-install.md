@@ -1,6 +1,6 @@
 ---
 title: '[Jenkins] Install Jenkins on Docker'
-date: 2019-12-30 10:30:00 -0400
+date: 2019-12-30 10:32:00 -0400
 categories: infra
 tags: jenkins infra docker
 ---
