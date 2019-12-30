@@ -4,6 +4,6 @@ title: Linux
 slug: linux
 category: infra
 menu: false
-order: 3
-header-img: "/img/linux-logo.png"
+order: 20
+header-img: '/img/linux-logo.png'
 ---
