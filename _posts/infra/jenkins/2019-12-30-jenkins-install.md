@@ -14,11 +14,15 @@ tags: jenkins infra docker install
 ```
 docker pull jenkins
 
-docker run -d -p 9090:8080 -v /jenkins:/home/jenkins --name jenkins -u root jenkins
+docker run --restart=always -d -p 9090:8080 -p 50000:50000 -v /home/jenkins:/var/jenkins_home:z --name jenkins -u root jenkins
 
 # 실행 확인
 docker ps -a
 ```
+
+-v /home/jenkins:/var/jenkins_home:z 의 경우는 일종의 백업 기능으로, 격리된 운영 공간인 컨테이너의 /var/jenkins_home의 젠킨스 운영 공간의 정보를 내 호스트 PC의 /jenkins로 공유하겠다는 의미
+
+해당 설정으로 인해 jenkins 컨테이너를 누군가 갑자기 지우더라도 내 호스트 pc의 /home/jenkins 디렉토리 안에 운영되던 jenkins 데이터가 남아있게 됨
 
 ### 접속확인
 

@@ -1,10 +1,10 @@
 ---
 layout: list
-title: Review
-slug: review
+title: DataBase
+slug: database
 menu: true
 submenu: true
 order: 6
 description: >
-  리뷰.
+  DataBase
 ---
