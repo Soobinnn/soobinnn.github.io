@@ -1,7 +1,7 @@
 ---
 layout: tag-blog
-title: ----- DataBase -----
-slug: database
+title: ----- etc -----
+slug: etc
 category: devlog
 menu: false
 order: 5
