@@ -47,6 +47,29 @@ docker run --rm --name dbadmin --link mysqldb:db -p 8080:8080 adminer
 즉 dbadmin 컨테이너 내부에서 db라는 이름으로 mysqldb컨테이너에 접근할 수 있다는 것을 의미한다.
 ```
 
+### 직접 생성해서 연결
+```
+docker network create \
+--driver bridge \
+--attachable \
+--scope local \
+--subnet 10.0.7.0/24 \
+--ip-range 10.0.7.0/24 \
+mynet
+```
+mynet라는 이름으로 driver는 bridge 로,
+
+--attachable 옵션은 컨테이너가 언제든지 네트워크에 연결하거나 떨어질 수 있게 설정한다. 
+
+--subnet과 --ip-range는 서브넷과 할당 가능한 IP 범위를 지정한다.
+
+네트워크를 생성했다면 컨테이너를 네트워크에 붙일 수 있다. 컨테이너를 실행할 때 --network 옵션을 사용하면 된다.
+```
+docker run --name mysqldb \
+--network mynet \
+-e MYSQL_ROOT_PASSWORD=rootpw \
+-d mysql:5.7
+```
 
 # 관련 명령어
 ```
