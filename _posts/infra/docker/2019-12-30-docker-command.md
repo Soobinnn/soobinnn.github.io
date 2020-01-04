@@ -19,3 +19,7 @@ docker network connect dataviz postgres # postgresql 컨테이너를 네트워�
 docker network connect dataviz superset # superset 컨테이너를 네트워크에 연결
 docker network inspect dataviz # network 정보 확인
 ```
+
+```
+docker network ls
+```
