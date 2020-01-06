@@ -57,3 +57,32 @@ tags: test sre 정적분석 static-analysis
 소스 코드가 늘어나고 복잡해 짐에 따라 유지보수 해야 하는 테스트 코드의 양도 같이 증가한다.
 
 또한 테스트 코드 역시 코딩 과정이므로 당연히 실수가 발생하고 테스트 코드의 실수는 품질에 큰 영향을 미친다.
+
+## 정적 분석 툴 종류
+
+1. PMD
+2. FindBugs
+3. CheckStyle
+4. Sonarqube
+
+### PMD
+
+미사용 변수, 비어있는 코드 블락, 불필요한 오브젝트 생성과 같은 Defect을 유발할 수 있는 코드를 검사
+
+https://pmd.github.io
+
+### FindBugs
+
+정해진 규칙에 의해 잠재적인 에러 타입을 찾아줌
+
+http://findbugs.sourceforge.net
+
+### CheckStyle
+
+정해진 코드 룰을 잘 따르고 잇는지에 대한 분석
+
+http://checkstyle.sourceforge.net
+
+### SonarQube
+
+코드를 수정하는과 동시에 자동으로 분석을 하고 리포팅까지 해줌

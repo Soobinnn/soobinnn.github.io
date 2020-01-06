@@ -1,7 +1,7 @@
 ---
 layout: tag-blog
-title: ----- etc -----
-slug: etc
+title: ----- Language -----
+slug: language
 category: devlog
 menu: false
 order: 5
