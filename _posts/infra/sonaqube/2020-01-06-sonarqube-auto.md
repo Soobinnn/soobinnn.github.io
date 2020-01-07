@@ -57,9 +57,11 @@ sonar.projectName= projectName입력
 sonar.projectVersion= 1.0
 
 # path to source directiories (required)
-sonar.sources=src
-sonar.tests=
+sonar.sources=src/main/java
+sonar.tests=src/test/java
 sonar.sourceEncoding=UTF-8
+sonar.java.libraries=build/libs/*.jar
+sonar.java.binaries=build/classes
 sonar.exclusions=src/public/**/*
 ```
 
@@ -68,6 +70,41 @@ sonar.exclusions=src/public/**/*
 [A nalysis Param](https://docs.sonarqube.org/latest/analysis/analysis-parameters/)
 
 [Source Param](https://docs.sonarqube.org/latest/project-administration/narrowing-the-focus/)
+
+## Sonar Scanner 설정
+
+### jenkins Pipeline
+
+#### SonarScanner
+
+```
+node {
+  stage('SCM') {
+    git 'https://github.com/foo/bar.git'
+  }
+  stage('SonarQube analysis') {
+    def scannerHome = tool 'SonarScanner 4.0';
+    withSonarQubeEnv('My SonarQube Server') { // If you have configured more than one global server connection, you can specify its name
+      sh "${scannerHome}/bin/sonar-scanner"
+    }
+  }
+}
+```
+
+#### for Gradle
+
+```
+node {
+  stage('SCM') {
+    git 'https://github.com/foo/bar.git'
+  }
+  stage('SonarQube analysis') {
+    withSonarQubeEnv() { // Will pick the global server connection you have configured
+      sh './gradlew sonarqube'
+    }
+  }
+}
+```
 
 # 참고 자료
 
@@ -80,3 +117,7 @@ https://taetaetae.github.io/2018/02/08/jenkins-sonar-github-integration/
 https://okky.kr/article/439198
 
 https://daddyprogrammer.org/post/817/sonarqube-analysis-intergrated-intellij/
+
+## 소나 스캐너
+
+https://docs.sonarqube.org/latest/analysis/scan/sonarscanner-for-jenkins/
