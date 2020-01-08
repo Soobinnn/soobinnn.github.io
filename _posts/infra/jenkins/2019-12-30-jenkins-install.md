@@ -49,7 +49,48 @@ cat으로 나온 패스워드를 복사해서 입력
 
 //그림4
 
+## 추가 설정
+
 ### 추천 플러그인
 
 - Build Name and Description Setter <br/>: 빌드 이름 세팅 플러그인
 - Parameterized Trigger <br/> : 트리거 시 파라미터값 전달 플러그인
+
+### Host docker 소켓을 jenkins 컨테이너와 연동
+
+```
+# 기존 구동중인 Jenkins 컨테이너 중지 및 삭제
+docker stop jenkins
+docker rm jenkins
+
+#host의 docker.sock과 container의 연동
+docker run
+  --restart=always -d
+  -p 9090:8080 -p 50000:50000
+  -v /home/jenkins:/var/jenkins_home:z
+  -v /var/run/docker.sock:/var/run/docker.sock
+  --name jenkins -u root jenkins
+
+#jenkins 컨테이너에서 docker binary 설치
+wget https://get.docker.com/builds/Linux/x86_64/docker-17.05.0-ce.tgz
+tar xvfz docker-17.05.0-ce.tgz
+cp ./docker/docker /usr/bin/
+docker -v
+
+exit
+
+#권한 설정
+도커 컨테이너 내부에서 Jenkins는 jenkins 유저로 실행됩니다. 이제 jenkins 유저가 docker.sock에 접근할 수 있도록 퍼미션을 잡아줘야 합니다.
+
+cat /etc/group | grep docker
+
+docker exec -it jenkins /bin/bash
+
+groupadd -g 999 docker
+cat /etc/group | grep docker
+usermod -aG docker jenkins
+
+exit
+
+docker restart jenkins
+```
