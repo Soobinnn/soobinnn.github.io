@@ -1,6 +1,6 @@
 ---
 title: '[Jenkins] Git 연동'
-date: 2019-12-30 10:30:00 -0400
+date: 2020-01-07 10:30:00 -0400
 categories: infra
 tags: jenkins infra whatis
 ---

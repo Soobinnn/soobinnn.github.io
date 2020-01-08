@@ -106,6 +106,12 @@ node {
 }
 ```
 
+### 팁
+
+jenkins에서 git checkout한 내용은
+
+/var/jenkins_home/workspace/{해당 job명}/ 폴더 안에 있다.
+
 # 참고 자료
 
 [공식문서](https://docs.sonarqube.org/latest/analysis/scan/sonarscanner-for-jenkins/)

@@ -48,3 +48,8 @@ cat으로 나온 패스워드를 복사해서 입력
 //그림3
 
 //그림4
+
+### 추천 플러그인
+
+- Build Name and Description Setter <br/>: 빌드 이름 세팅 플러그인
+- Parameterized Trigger <br/> : 트리거 시 파라미터값 전달 플러그인
