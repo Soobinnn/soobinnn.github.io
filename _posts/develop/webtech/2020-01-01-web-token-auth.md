@@ -119,6 +119,58 @@ Access-Control-Allow-Origin: *
 
 따라서, 여러 환경에서 지원이 되며 수많은 회사의 인프라구조에서 사용되고 있다.
 
+### Tip
+
+JWT는 토큰 유형
+
+OAuth는 토큰을 발급하고 인증하는 방법을 설명하는 일종의 프레임워크
+
+#### EX)
+
+기존 OAuth에서 주로 사용하는 bearer 기반의 토큰 방식.
+
+##### \* Bearer token
+
+리소스에 대한 액세스 권한을 부여받기 위해 제시해야 하는 유일한 작업이 토큰을 주는 것
+
+```
+{
+"token_type":"bearer",
+"access_token":"eyJ0eXAiOiJKV1QiLCJh",
+"expires_in":20,
+"refresh_token":"fdb8fdbecf1d03ce5e6125c067733c0d51de209c"
+}
+```
+
+JWT는 토큰 자체에 유저 정보를 담아서 HTTP 헤더로 전달
+
+### 사용자 인증 방식
+
+- Basic
+- OAuth 1.0a Bearer
+- OAuth 2.0 Bearer
+- JWT Bearer
+- Digest
+- HOBA
+
+#### Basic
+
+ID와 비밀번호를 base64 인코딩하는 방식.
+
+base64는 별도의 key 없이도 복호화가 가능한 인코딩이므로, 안전하지 않다.
+
+#### OAuth 1.0a
+
+Bearer 인증 표준이 아니다. Bearer 스펙을 명시한 [RFC 6750](https://tools.ietf.org/html/rfc6750)에는 큰 글씨로 'The OAuth 2.0 Authorization Framework'
+
+#### OAuth 2.0
+
+확장성이 높음 (SNS 연동) OAuth2.0은 자체 암호화를 지원하지 않기 때문에 HTTPS를 쓰는 것을 권고 (비용 발생) OAUTH 2.0방식으로 Bearer Token 생성
+
+#### JWT
+
+토큰의 유형 Authorization 헤더 사용, 디지털 방식(sign)된 토큰 사용
+
 # 참고 문서
 
 https://velopert.com/2350
