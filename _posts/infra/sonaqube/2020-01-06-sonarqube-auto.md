@@ -2,7 +2,7 @@
 title: '[SonaQube] Sonarqube 자동화'
 date: 2020-01-06 10:31:00 -0400
 categories: infra
-tags: sonaQube infra jenkins auto devops
+tags: sonaqube infra jenkins auto devops
 ---
 
 # Sonarqube Jenkins 연동
