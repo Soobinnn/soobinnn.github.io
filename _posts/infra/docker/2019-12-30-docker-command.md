@@ -39,6 +39,23 @@ echo -e "FROM ubuntu:14.04\nRUN yum update" | sudo docker build -t hello -
 sudo docker build -t hello - < Dockerfile
 ```
 
+### login
+
+Docker Registry에 로그인하는 명령어
+
+```
+docker login <옵션> <Docker Registry URL>
+
+# 옵션
+-e : (--email="") 로그인할 때 사용할 이메일 설정
+-p : (--password="") 로그인할 때 사용할 비밀번호를 설정
+-u : (--username="") 로그인할 때 사용할 Docker Registry 계정을 설정
+
+# 로그인 확인방법
+// 로그인이 되어있다면 Username 출력, 로그인 안되어 있으면 아무것도 출력되지 않음.
+docker info | grep Username
+```
+
 ### commit
 
 컨테이너에서 작업을 한 후 그 컨테이너를 다시 이미지로 생성하는 명령어
