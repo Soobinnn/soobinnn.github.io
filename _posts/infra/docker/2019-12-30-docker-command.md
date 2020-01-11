@@ -39,6 +39,20 @@ echo -e "FROM ubuntu:14.04\nRUN yum update" | sudo docker build -t hello -
 sudo docker build -t hello - < Dockerfile
 ```
 
+### run
+컨테이너 생성과 함께 컨테이너 시작
+```
+docker run <옵션> <이미지 이름><실행할 파일>
+
+# 옵션
+
+-i : (interactive)
+-t : (Pseudo-tty)
+--name : 컨테이너의 이름을 지정 (default 자동지정)
+-d : 컨테이너를 백그라운드로 실행시키는 옵션
+-p : 호스트 포트와 컨테이너 포트를 연결한다. (여러개 가능)
+```
+
 ### login
 
 Docker Registry에 로그인하는 명령어
@@ -70,6 +84,20 @@ docker commit [options] <container name> [image name[:tag name]]
 
 # 예제
 docker commit -a "sbim" -m "update" jenkins jenkins:1.0
+```
+
+### push
+Docker Hub / Registry에 이미지를 올리는 명령어.
+
+Docker Hub에 이미지를 올리려면 이미지 이름을 <Docker Hub 사용자 계정>/<이미지 이름>:<태그> 형식으로 생성해야 합니다. 
+
+아무 사용자 이름이나 사용할 수 있지만 내 계정 이름과 일치해야 이미지를 올릴 수 있습니다. 태그를 지정하지 않으면 latest가 됩니다.
+
+```
+docker push <이미지 이름>
+
+# 예제
+docker push webatoz/jenkins
 ```
 
 # 현재 postgres와 superset 컨테이너를 각각 만들어 놓은 상태이다.

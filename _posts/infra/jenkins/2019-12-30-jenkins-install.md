@@ -79,7 +79,7 @@ docker -v
 
 exit
 
-#권한 설정
+# 권한 설정 (Docker in Docker)
 도커 컨테이너 내부에서 Jenkins는 jenkins 유저로 실행됩니다. 이제 jenkins 유저가 docker.sock에 접근할 수 있도록 퍼미션을 잡아줘야 합니다.
 
 cat /etc/group | grep docker
