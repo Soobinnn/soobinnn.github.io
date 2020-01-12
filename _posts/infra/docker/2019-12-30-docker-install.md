@@ -29,10 +29,15 @@ sudo ln -sf /usr/bin/docker.io /usr/local/bin/docker
 
 ```
 #Install
-sudo yum install docker
+// sudo yum install docker 는 이전 버전이므로 하지 않음.
+yum install -y yum-utils device-mapper-persistent-data lvm2
+
+yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+
+yum install -y docker-ce
 
 #Docker 서비스 실행
-sudo service docker start
+systemctl start docker
 
 #부팅시 자동 실행 설정
 sudo chkconfig docker on
