@@ -8,13 +8,21 @@ tags: sonaqube infra install
 # 준비사항
 
 ```
+# docker-composer를 사용한다면 composer에서 설정 가능
+# (composer설정은 아래에서 설명함.)
 sysctl -w vm.max_map_count=262144
 sysctl -w fs.file-max=65536
 ulimit -n 65536
 ulimit -u 4096
+
+혹은
+vi /etc/sysctl.conf
+
+vm.max_map_count=262144 추가
 ```
 
 SonarQube7.9 설치 시 제약 조건 : https://docs.sonarqube.org/7.9/requirements/requirements/
+
 
 \*\* 만약 사양이 안되면, sonarqube:7.5-community 버전으로
 

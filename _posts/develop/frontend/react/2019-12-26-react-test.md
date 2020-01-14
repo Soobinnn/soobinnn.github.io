@@ -3,6 +3,7 @@ title: '[React] React Testing'
 date: 2019-12-26 12:00:00 -0400
 categories: devlog
 tags: react devlog tdd test
+comments: true
 ---
 
 본 문서에서는 리액트 프로젝트에서 TDD (Test Driven Development)를 하는 방법에 대해 요약함. (velopert님의 문서 참조)

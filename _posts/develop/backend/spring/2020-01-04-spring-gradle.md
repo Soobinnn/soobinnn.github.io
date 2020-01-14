@@ -3,6 +3,7 @@ title: '[Spring] Gradle'
 date: 2020-01-04 21:05:00 -0400
 categories: devlog
 tags: spring devlog gradle
+comments: true
 ---
 
 # Gradle 이란?
