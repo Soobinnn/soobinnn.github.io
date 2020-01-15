@@ -5,5 +5,5 @@ slug: jenkins
 category: infra
 menu: false
 order: 3
-header-img: '/img/meteor-logo.png'
+header-img: '/img/logo/jenkins-logo.png'
 ---

@@ -5,5 +5,5 @@ slug: ansible
 category: infra
 menu: false
 order: 3
-header-img: '/img/ansible-logo.png'
+header-img: '/img/logo/ansible-logo.png'
 ---

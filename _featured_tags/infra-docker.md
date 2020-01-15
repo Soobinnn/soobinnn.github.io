@@ -5,5 +5,5 @@ slug: docker
 category: infra
 menu: false
 order: 1
-header-img: "/img/meteor-logo.png"
+header-img: '/img/logo/docker-logo.png'
 ---
