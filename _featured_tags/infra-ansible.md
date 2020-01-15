@@ -1,9 +1,9 @@
 ---
 layout: tag-blog
-title: ansible
+title: Ansible
 slug: ansible
 category: infra
 menu: false
 order: 3
-header-img: '/img/meteor-logo.png'
+header-img: '/img/ansible-logo.png'
 ---
