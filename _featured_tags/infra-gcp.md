@@ -5,5 +5,5 @@ slug: gcp
 category: infra
 menu: false
 order: 5
-header-img: '/img/aws-logo.png'
+header-img: '/assets/img/logo/gcp-logo.png'
 ---
