@@ -14,3 +14,18 @@ tags: linux infra command
 ```
 sudo passwd root
 ```
+
+### 포트 확인
+
+```
+netstat
+
+# 옵션
+-n : ip 주소를 문자형(localhost)가 아닌 숫자형태로 보여줌.
+-a : all
+-t : tcp 정보 확인
+```
+
+# 쉘스크립트
+
+#!/bin/bash를 기제하는 이유스크립트 파일이 bash쉘로 실행시킨다는 의미.

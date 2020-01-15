@@ -1,6 +1,6 @@
 ---
 title: '[test] What is Static Analysis ?'
-date: 2019-12-28 19:30:00 -0400
+date: 2020-01-03 19:30:00 -0400
 categories: sre
 tags: test sre 정적분석 static-analysis
 ---
