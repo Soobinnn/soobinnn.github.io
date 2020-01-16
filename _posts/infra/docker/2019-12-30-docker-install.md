@@ -43,4 +43,12 @@ systemctl start docker
 sudo chkconfig docker on
 ```
 
+/\* Centos에서 **install docker** 가 아닌 **install docker-ce** "최신버전"으로 설치해야하는 이유 -> docker in docker, docker out of docker 사용 시 보안 이슈
+
+[docker공식문서](https://docs.docker.com/install/linux/docker-ce/centos/)
+
 ## Window
+
+# 참고 문서
+
+https://docs.docker.com/install/linux/docker-ce/centos/
