@@ -66,6 +66,9 @@ assertThat(T actual, Matcher<? super T> matcher) 형태로
 첫번째 파라미터의 값을 뒤에 나오는 matcher라 불리는 조건으로 비교해서 일치하면 다음으로 넘어가고 아니면 테스트가 실패도록 함.
 
 #### Macher
+> hamcrest ?
+>> 소프트웨어 테스트를 위한 framework
+>> 
 - is()
 : matcher의 일종으로 equals로 비교해주는 기능을 가짐.
 JUnit이 처음으로 의존성을 가지고 사용하는 제3자 클래스
@@ -165,6 +168,5 @@ SpringJUnit4ClassRunner라는 클래스를 지정해주면 JUnit이 테스트를
 
 - @SpringApplicationConfiguration
 Spring Boot에서 class형태의 애플리케이션 컨텍스트를 로딩 할 수 있다.
-
 
 # TEST 예제
