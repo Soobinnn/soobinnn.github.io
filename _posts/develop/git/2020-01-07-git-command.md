@@ -15,3 +15,21 @@ git pull <remote Repository> <branch name>
 // 이미 존재하는 두 프로젝트의 기록(history)을 저장하는 드문 상황에 사용된다고 한다. 즉, git에서는 서로 관련 기록이 없는 이질적인 두 프로젝트를 병합할 때 기본적으로 거부하는데, 이것을 허용해 주는 것이다.
 git pull origin 브런치명 --allow-unrelated-histories
 ```
+
+### checkout
+
+```
+git checout <branch name>
+
+# 옵션
+-b
+
+```
+
+### branch
+
+```
+git branch <branch name>
+
+git branch : 현재 작업하고 있는 브랜치 확인
+```
