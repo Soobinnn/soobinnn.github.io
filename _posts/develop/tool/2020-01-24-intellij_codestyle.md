@@ -1,9 +1,17 @@
 ---
-title: '[intellj] Google Code Format'
+title: '[intellj] Google Java Format'
 date: 2020-01-24 09:49:00 -0400
 categories: devlog
 tags: tool devlog intellij codestyle codeconvention format java
 ---
+# Intellj Code Format 설정
+Intellj에서 Google Java Format를 적용시키는 방법.
+
+Code Style을 적용 시키는 방법엔 여러가지가 있다
+1. Plugin 세팅
+2. xml 세팅
+3. 라이브러리 세팅
+
 ## Plugin 세팅
 "Ctrl + Alt + S" 환경설정 - Plugin
 ![codeconvention_1](/assets/img/post/intellj/google_code_style_1.PNG)
@@ -22,8 +30,8 @@ Ctrl + Alt + L 을 누르면 적용되는 것을 확인할 수 있다.
 
 
 - plugin 단점 
-
-    자동정렬 시만 적용되고 실질적으로 코딩할 때 tap키같은건 적용되지 않음. 
+    자동정렬 시만 적용되고 실질적으로 코딩할 때 IDE에서 Default로 적용되지 않음. 
+    (xml로 설정 시 tap key 간격이 변경되어 코딩 시에도 적욛됨.)
 
 ## xml 세팅
 [https://github.com/google/styleguide](https://github.com/google/styleguide) 에서 다운
@@ -36,6 +44,9 @@ File - Settings - Editor - Code Style
 
 적용 - Intellj 재시작
 ![codeconvention_7](/assets/img/post/intellj/google_code_style_7.PNG)
+
+.java파일에서 tap키를 누르면 default 간격이 2로 되는 것을 확인 할 수 있다.
+
 
 ## 저장 시 자동 정렬
 저장 시 자동정렬도 plugin을 사용하거나 IDE의 매크로기능을 사용하여 적용할수있다.
