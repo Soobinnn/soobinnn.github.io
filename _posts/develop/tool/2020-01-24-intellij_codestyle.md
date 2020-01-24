@@ -34,7 +34,7 @@ Ctrl + Alt + L 을 누르면 적용되는 것을 확인할 수 있다.
     (xml로 설정 시 tap key 간격이 변경되어 코딩 시에도 적욛됨.)
 
 ## xml 세팅
-[https://github.com/google/styleguide](https://github.com/google/styleguide) 에서 다운
+[https://github.com/google/styleguide](https://github.com/google/styleguide) 에서 __"intellj-java-google-style.xml"__ 다운
 
 File - Settings - Editor - Code Style
 ![codeconvention_5](/assets/img/post/intellj/google_code_style_5.PNG)
