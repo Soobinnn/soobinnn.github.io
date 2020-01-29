@@ -28,6 +28,12 @@ git tag
 
 # 태그명 포함 로그 보기
 git log --decorate
+
+# 태그 지우기
+git tag -d <태그명>
+
+# 원격에 있는 태그 지우기
+git push origin :<태그명>
 ```
 
 ### checkout
