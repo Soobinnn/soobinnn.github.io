@@ -17,6 +17,7 @@ git pull origin 브런치명 --allow-unrelated-histories
 ```
 
 ### tag
+
 ```
 # 태그 생성
 git tag <tag name>
@@ -26,13 +27,13 @@ git tag <tag name>
 git tag
 
 # 태그명 포함 로그 보기
-git log --decorate 
+git log --decorate
 ```
 
 ### checkout
 
 ```
-git checout <branch name>
+git checkout <branch name>
 
 # 옵션
 -b
@@ -48,4 +49,26 @@ git checkout -b feature/TESTAUTO-7049 develop
 git branch <branch name>
 
 git branch : 현재 작업하고 있는 브랜치 확인
+```
+
+### log
+
+```
+# 현재 브랜치에 대한 로그 커밋 출력
+git log
+
+# 모든 브랜치의 로그 출력
+git log --branches
+
+#모든 브랜치의 브랜치명 표시
+git log --branches --decorate
+
+git log --braches --decorate --graph
+
+git log --branches --decorate --graph --online
+
+# 최신 로그 5개까지만 출력해줌
+git log -5
+
+git log -p <branchname>
 ```
