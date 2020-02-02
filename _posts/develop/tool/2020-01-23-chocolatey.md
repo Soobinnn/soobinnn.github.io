@@ -16,3 +16,19 @@ choco를 설치한 뒤에는 명령어 창으로 설치 할 수 있다.
 ```
 choco install 패키지명
 ```
+
+# 설치 방법
+```
+Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+```
+
+## Java Install
+```
+choco install openjdk
+
+refreshenv
+
+java -version
+
+
+```
