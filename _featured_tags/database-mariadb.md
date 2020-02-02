@@ -1,7 +1,7 @@
 ---
 layout: tag-blog
 title: MariaDB
-slug: maria
+slug: mariadb
 category: database
 menu: false
 order: 1
