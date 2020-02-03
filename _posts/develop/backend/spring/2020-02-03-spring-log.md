@@ -14,6 +14,10 @@ logback-spring.xml이 없다면 yml파일 설정을 봄.
 
 logback-spring.xml파일과 .yml파일이 동시에 있다면 .yml 설정 파일을 먼저 적용 후 xml파일이 적용되는 것을 확인함.
 
+application.properties
+```
+logging.config=classpath:logging-config.xml
+```
 ## xml설정
 ```
 <appender name="privateLogAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
