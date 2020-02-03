@@ -1,9 +1,9 @@
 ---
 layout: tag-blog
-title: OWASP ZAP
-slug: owaspzap
-category: devlog
+title: DefectDojo
+slug: defectdojo
+category: infra
 menu: false
-order: 2
+order: 1
 header-img: '/img/vue-logo.png'
 ---
