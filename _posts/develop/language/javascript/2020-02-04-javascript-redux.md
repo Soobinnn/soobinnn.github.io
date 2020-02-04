@@ -106,3 +106,7 @@ minusButton.onclick = () => {
 	store.dispatch(decrement());
 };
 ```
+
+# 참고 자료
+
+https://velog.io/@velopert/Redux-2-%EB%A6%AC%EC%95%A1%ED%8A%B8-%EC%97%86%EC%9D%B4-%EC%93%B0%EB%8A%94-%EB%A6%AC%EB%8D%95%EC%8A%A4-cijltabbd7
