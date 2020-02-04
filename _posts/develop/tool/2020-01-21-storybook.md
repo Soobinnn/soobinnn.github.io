@@ -96,13 +96,20 @@ export const big = () => <Hello name="Storybook" big />;
 
 StoryBook의 가장 기본적인 기능이다.
 
-여기에 StoryBook Addon을 적용하면 더욱 다양하고 편리한 기능들을 붙여줄 수 있다.
+## 애드온
 
-## 애드온 설치
+StoryBook Addon을 적용하면 더욱 다양하고 편리한 기능들을 붙여줄 수 있다.
+
+- Knobs
+- Action
+- Docs
+- Viewport
 
 ### Knobs
 
 컴포넌트의 props를 스토리북 화면에서 바꿔서 바로 반영시켜줄 수 있는 애드온
+
+#### Install
 
 ```
 yarn add --dev @storybook/addon-knobs
@@ -135,7 +142,7 @@ export const standard = () => <Hello name="Storybook" />;
 export const big = () => <Hello name="Storybook" big />;
 ```
 
-#### Knobs 생성
+#### Example - Knobs 생성
 
 Knobs 를 사용 할 때 넣어주어야 하는 주요 인자로는 Knobs 의 이름, 기본값 그리고 GROUP ID 가 있다. (GROUP ID 의 경우 생략가능)
 
@@ -192,7 +199,7 @@ export const big = () => <Hello name='Storybook' big />;
 
 Storybook CLI로 만든 프로젝트에 **기본적으로 적용이 되어있기 때문에 별도로 설치하실 필요가 없다.**
 
-#### example
+#### Example
 
 ```javascript
 # src/Components/Hello.js
@@ -250,6 +257,8 @@ export const big = () => <Hello name="Storybook" big />;
 ### Docs
 
 MDX형식으로 문서를 작성 할 수 있게 해주고, 컴포넌트의 props와 주석에 기반하여 문서를 자동생성해줌.
+
+#### Install
 
 ```
 yarn add --dev @storybook/addon-docs
@@ -390,6 +399,28 @@ Docs 애드온을 통하여 자동으로 만들어진 문서에서 제공하는 
 컴포넌트에 대한 MDX를 작성하실 때에는 MDX-only로 문서를 작성하는 것은 권장하지 않는다.
 
 그 이유는 나중에 TypeScript를 사용하게 된다면 IDE에서 .mdx 확장자에 대한 TypeScript 지원이 제대로 이루어지지 않는다.
+
+### Viewport
+
+storyboard에서 반응형 구성 요소를 작성하고 확인할 수 있음.
+
+#### Install
+
+```
+yarn -D @storybook/addon-viewport
+```
+
+#### Setting
+
+.storybook/main.js에 '@storybook/addon-viewport/register' 추가
+
+```
+# .storybook/main.js
+
+module.exports = {
+  addons: ['@storybook/addon-viewport/register'],
+};
+```
 
 # 참고자료
 
