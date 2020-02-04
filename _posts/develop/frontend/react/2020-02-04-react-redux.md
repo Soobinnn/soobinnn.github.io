@@ -21,6 +21,11 @@ header-img: '/img/logo/redux-logo.png'
 # 개념
 
 - Action
+- Action Creator
+- Reducer
+- Store
+- Dispatch
+- Subscribe
 
 ## Action
 
