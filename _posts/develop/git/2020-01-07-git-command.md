@@ -22,7 +22,6 @@ git pull origin 브런치명 --allow-unrelated-histories
 # 태그 생성
 git tag <tag name>
 
-
 # 태그 목록 보기
 git tag
 
@@ -77,4 +76,12 @@ git log --branches --decorate --graph --online
 git log -5
 
 git log -p <branchname>
+```
+
+### rebase
+
+```
+# 과거의 커밋을 통합할 때
+git rebase -i HEAD~~
+
 ```

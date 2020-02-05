@@ -1,6 +1,6 @@
 ---
 title: '[Github] ZenHub'
-date: 2020-01-24 09:49:00 -0400
+date: 2020-02-04 09:49:00 -0400
 categories: devlog
 tags: tool devlog git collaboration
 ---

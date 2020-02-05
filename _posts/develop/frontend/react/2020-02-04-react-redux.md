@@ -18,7 +18,7 @@ header-img: '/img/logo/redux-logo.png'
 
 \* 리덕스는 리액트에 종속되지 않는다. 리액트에서 사용하려고 만든거지만, 다른 UI 라이브러리나 프레임워크와 함께 사용 될 수 있다.
 
-# 개념
+# Redux 개념
 
 - Action
 - Action Creator

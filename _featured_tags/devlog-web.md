@@ -5,6 +5,5 @@ slug: web
 category: devlog
 menu: false
 order: 2
-header-img: "/img/web-logo.png"
+header-img: '/img//logo/web-logo.png'
 ---
- 
