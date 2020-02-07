@@ -38,4 +38,8 @@ const [one, two, three] = foo;
 console.log(one); // "one"
 console.log(two); // "two"
 console.log(three); // "three"
+
+const array = ['dog', 'cat', 'sheep'];
+const [first, second] = array;
+console.log(first, second); // dog cat
 ```
