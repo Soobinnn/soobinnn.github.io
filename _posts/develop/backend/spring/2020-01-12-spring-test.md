@@ -169,4 +169,60 @@ SpringJUnit4ClassRunner라는 클래스를 지정해주면 JUnit이 테스트를
 - @SpringApplicationConfiguration
 Spring Boot에서 class형태의 애플리케이션 컨텍스트를 로딩 할 수 있다.
 
+# TEST 동작 방식
+테스트 파일에는 @SpringBootTest 어노테이션이 붙어있는데 @SpringBootTest는 @SpringBootApplication이 붙어있는 스프링 메인 애플리케이션을 찾아간다.
+
+메인에서 부터 시작하는 모든 Bean을 스캔을 한다.
+
+테스트용 애플리케이션 context를 만들면서 모든 Bean을 등록 해준다.
+
+그 후 MockBean을 찾아서 그 Bean만 교체해준다. 교체된 MockBean은 테스트마다 리셋된다.
+
+## Mock
+서블릿 컨테이너를 띄우지 않고
+Mockup해서 서블릿을 Mocking한 것을 띄운다
+
+
+# Test 종류
+## 통합테스트
+모든 Bean을 올려서 테스트
+1. 쉽게 테스트 가능
+2. 운영환경과 유사한 테스트
+3. 전체적인 Flow 테스트 가능
+
+단점
+1. 모든 Bean을 올리기 떄문에 시간이 오래걸리고 무거움
+
+2. 테스트 단위가 커서 실패시 디버깅 어려움
+3. Rollback 처리가 안되는 테스트 진행을 하기 어려움
+
+```java
+@RunWith(SpringRunner.class)
+@SpringBootTest(
+  classes = {CommonConfig.class},
+  properties = "classpath:application-test.yml"),
+ webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT
+)
+@Transactional
+public class IntegrationTest{
+  
+  @Autowired 
+  MockMvc mvc;
+  
+  @Autowired
+  private TestRestTemplate restTemplate;
+  
+}
+```
+
+
+
 # TEST 예제
+
+# 참고 문서
+https://lalwr.blogspot.com/2019/09/spring-test.html
+
+https://cheese10yun.github.io/spring-guide-test-1/
+
+
+https://cheese10yun.github.io/spring-about-test/
