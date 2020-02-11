@@ -69,7 +69,7 @@ docker run
   -p 9090:8080 -p 50000:50000
   -v /home/jenkins:/var/jenkins_home:z
   -v /var/run/docker.sock:/var/run/docker.sock
-  --name jenkins -u root jenkins
+  --name jenkins -e TZ=Asia/Seoul -u root jenkins
 
 #jenkins 컨테이너에서 docker binary 설치
 wget https://get.docker.com/builds/Linux/x86_64/docker-17.05.0-ce.tgz
@@ -93,6 +93,18 @@ usermod -aG docker jenkins
 exit
 
 docker restart jenkins
+```
+
+## Jenkins Time 설정
+
+### TimeZone 확인방법
+
+jenkins경로/systemInfo에서 user.timezone 확인
+
+```
+cd /var/lib/jenkins
+JENKINS_JAVA_OPTIONS="-Dorg.apache.commons.jelly.tags.fmt.timeZone=Asia/Seoul" 입력
+http://[jenkins-server]/restart
 ```
 
 # 참고 문서

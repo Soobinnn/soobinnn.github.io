@@ -6,6 +6,7 @@ tags: postgresql database pg
 ---
 
 ## Linux 명령어
+
 ```
 # postgresql docker 접속
 docker exec -it <postgresql명> bash
