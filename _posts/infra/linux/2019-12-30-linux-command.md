@@ -36,6 +36,23 @@ useradd -G <그룹> <사용자 이름>
 usermod -aG <그룹> <사용자 이름>
 ```
 
+### 압축해제
+
+```
+# tar로 압축하기
+tar -cvf <파일명.tar> <폴더명>
+
+# tar.gz로 압축 하기
+tar -zcvf <파일명.tar.gz> <폴더명>
+
+# tar 압축 풀기
+tar -xvf <파일명>
+
+# tar.gz 압축 풀기
+tar -zxvf <파일명>
+
+```
+
 # 쉘스크립트
 
 #!/bin/bash를 기제하는 이유스크립트 파일이 bash쉘로 실행시킨다는 의미.

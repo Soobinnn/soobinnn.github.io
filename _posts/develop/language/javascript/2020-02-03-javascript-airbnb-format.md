@@ -28,7 +28,7 @@ npx install-peerdeps --dev eslint-config-airbnb
 ### 3) ESLint-Prettier 연동 plugin
 
 ```
-npm install -D eslint-config-prettier eslint-plugin-prettier
+npm install -D eslint-config-prettier eslint-plugin-prettier babel-eslint
 ```
 
 - eslint-plugin-prettier
@@ -54,6 +54,10 @@ eslint-config-prettier은 prettier 에서 관리 해 줄 수 있는 코드 스�
   "rules": {
     "prettier / prettier": [ "error"]
   },
+  "parser": "babel-eslint",
+  "env": {
+    "es6": true
+  }
 }
 ```
 
