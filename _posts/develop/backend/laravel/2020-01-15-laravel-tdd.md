@@ -7,6 +7,8 @@ tags: spring devlog test tdd
 
 # TDD 시작하기
 
+## PHPUnit
+
 ```
 composer create-project --prefer-dist laravel/laravel tdd-crud
 ```
@@ -63,6 +65,32 @@ tests/features 폴더 안에 <테스트케이스명>으로 파일이 생성됨.
 \$ this-> assertDatabaseHas ( 'table', [ 'field'=> 'value']);
 
 \$ this-> assertRedirect ( 'url');
+
+## CodeCeption
+
+테스트케이스명뒤에 Cest를 붙인다.
+
+#### Controller
+
+```php
+   public function getDashboard(AcceptanceTester $I)
+    {
+        $I->haveHttpHeader('Content-Type', 'application/json');
+        $I->sendGET('/v1/dashboards/1');
+        $I->seeResponseIsJson(200);
+        $I->seeResponseContainsJson(['error' => 0, 'status_code' => ResponseCode::HTTP_OK]);
+    }
+```
+
+#### Service
+
+```php
+
+```
+
+```php
+
+```
 
 \* 참고
 
