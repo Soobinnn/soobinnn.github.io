@@ -7,6 +7,61 @@ tags: react devlog router
 
 # React Router 란?
 
+기본적으로 클라이언트 사이드 렌더링을 하는 SPA특징을 가지는 리액트에서 주소마다 다른 뷰를 그려주기 위해서 필요함.
+
+- history
+- location
+- match
+
+__Router Component__
+
+- HashRouter
+- BrowserRouter
+
+1. HashRouter
+    
+    링크를 추적하는데 해시를 사용.
+    
+    정적인 서버에 적용하는 것이 적절함.
+
+2. BrowserRouter
+
+    동적인 서버
+
+__history__
+
+브라우저의 window.history와 유사
+주소를 임의로 변경하거나 되돌아 갈 수 있도록 한다.
+주소 변경시, SPA특성을 지키기 위해 페이지 전체를 리로드 하지 않는다.
+
+__location__
+
+브라우저의 window.location와 유사
+
+현재 페이지 정보를 지니고 있다.
+
+url의 query 정보 search라는 프로퍼티에 가지고 있다.
+
+__match__
+
+Route의 path에 정의한 것과 매칭된 정보를 가지고 있다.
+
+- match.url
+
+    실제로 매칭된 url 문자열 ex) /board/1
+
+- match.path
+
+    매칭에서 사용된 경로패턴 /    실제로 매칭된 url 문자열 ex) /board/1
+/:id
+
+Link
+
+: a 태그를 기반으로 기능상의 개선을 통해 새로고침 없이 다른 뷰를 렌더 하기 위해 사용
+
+history.push
+
+
 # install
 
 ```
@@ -17,7 +72,7 @@ npm install --save react-router-dom
 
 ## 라우터 설정
 
-```
+```javascript
 # src/index.js
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -73,7 +128,7 @@ history는 브라우저의 주소창이 어떻게 바뀌는지 주시하고 주�
 
 ex) /about - ABOUT경로
 
-```
+```javascript
 # src/components/Header.js
 import React from 'react';
 import { Link } from 'react-router';
@@ -110,3 +165,16 @@ export default Header;
 Link컴포넌트에 className을 설정하면 그대로 전달돼서 해당 클래스를 가진 a태그로 이뤄진 컴포넌트로 변환해줌.
 
 Link컴포넌트가 눌렀을 때, 설정 될 라우트 경로는 to값을 통해 설정함.
+
+## 라이브러리
+라우트 전환 애니메이션 작업
+
+react-transition-group 
+
+
+
+
+# 참고 문서
+https://john015.netlify.com/react-router-v-5-1-%EB%AC%B4%EC%97%87%EC%9D%B4-%EB%8B%AC%EB%9D%BC%EC%A1%8C%EC%9D%84%EA%B9%8C
+
+https://medium.com/@wdjty326/react-router-dom-v5-route-%EC%A0%84%ED%99%98-%EC%95%A0%EB%8B%88%EB%A9%94%EC%9D%B4%EC%85%98-%EC%B2%98%EB%A6%AC-935dfc6cc475

@@ -6,6 +6,20 @@ tags: ansible infra
 ---
 
 # Ansible 시작하기
+```
+yum install ansible
+
+ansible
+
+ansible all -m -ping -k
+
+
+```
+yum repolist
+yum install epel-release
+
+/etc/anmsible/hosts
+
 
 # 참고자료
 
