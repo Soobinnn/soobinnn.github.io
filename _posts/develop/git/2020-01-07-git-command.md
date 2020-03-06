@@ -54,6 +54,18 @@ git checkout -b feature/TESTAUTO-7049 develop
 git branch <branch name>
 
 git branch : 현재 작업하고 있는 브랜치 확인
+
+# 옵션
+-v : 로컬 branch 정보를 마지막 커밋 내역과 함께 보여줌
+
+-r : 리모트 저장소의 브랜치를 보여줌
+
+-a 로컬/리모트 저장소의 모든 branch정보를 보여줌
+
+-m <변경할 명> <변경될 명>
+: 브랜치명 변경
+
+git fetch --all; git branch -vv
 ```
 
 ### log
