@@ -166,12 +166,18 @@ Link컴포넌트에 className을 설정하면 그대로 전달돼서 해당 클�
 
 Link컴포넌트가 눌렀을 때, 설정 될 라우트 경로는 to값을 통해 설정함.
 
-## 라이브러리
+## 호환 라이브러리
 라우트 전환 애니메이션 작업
 
 react-transition-group 
 
+## v5.1 ++
+`Hooks` 기능 추가
 
+- useParams
+- useLocation
+- useHistory
+- useRouteMatch
 
 
 # 참고 문서
