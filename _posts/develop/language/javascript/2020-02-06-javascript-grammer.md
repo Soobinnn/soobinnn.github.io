@@ -5,6 +5,12 @@ categories: devlog
 tags: javascript devlog function
 ---
 
+## Map
+
+## Set
+
+
+
 ## Binding
 
 함수 호출과 실제 함수를 연결하는 방법.
