@@ -29,14 +29,6 @@ tags: javascript devlog function
 
 ## indexOf
 
-## find
-
-제공된 테스트 함수를 만족하는 배열의 첫 번째 요소를 반환
-
-## findIndex
-
-제공된 테스트 함수를 만족하는 배열의 첫 번째 요소에 대한 인덱스를 반환
-
 ## slice
 배열 전체 혹은 부분 복제 할 때
 
@@ -71,3 +63,25 @@ console.log(names); // ['Einstein', 'Kittie', 'Sally', 'John']
 
 ## reduce
 
+# for
+
+## for
+
+## forEach
+
+## mapv
+
+## find
+
+제공된 테스트 함수를 만족하는 배열의 첫 번째 요소를 반환
+
+## findIndex
+
+## some
+
+## every
+
+제공된 테스트 함수를 만족하는 배열의 첫 번째 요소에 대한 인덱스를 반환
+
+# 참고 자료
+https://mylife365.tistory.com/491
