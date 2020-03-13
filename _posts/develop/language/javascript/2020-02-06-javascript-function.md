@@ -68,5 +68,6 @@ console.log(names); // ['Einstein', 'Kittie', 'Sally', 'John']
 
 ## map
 
+
 ## reduce
 
