@@ -31,3 +31,12 @@ Flux의 구현체 reducer
 npm i redux --save
 yarn add redux
 ```
+
+##  Side Effects
+상태 변화를 유도하는 모든 요소들
+
+리덕스 스토어에 상태를 변화시키는 액션들의 모든 작업
+
+redux-thunk -> redux-saga
+
+es6 generater 기반 
