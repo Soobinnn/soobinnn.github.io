@@ -5,6 +5,34 @@ categories: devlog
 tags: javascript devlog function
 ---
 
+## 문자열
+
+### 소수점
+- Math.ceil()
+    소수점 올림, 정수 반환
+
+- Math.floor()
+    소수점 버림, 정수 반환
+
+- Math.round()
+    소수점 반올림, 정수 반환
+
+- toFixed()
+    원하는 소수점 길이만큼만 반올림하여서 반환
+
+- toExponential()
+    지정한 소수점 이하부터는 지수표기법으로 변환
+
+- toPrecision()
+    지정된 값만큼 반올림한 정수와 소수점
+
+```javascript
+
+const test = Math.floor();
+~~test
+
+```
+
 ## concat
 
 두개의 문자열을 하나의 문자열로 만들어주는 역할을 하는 함수.
