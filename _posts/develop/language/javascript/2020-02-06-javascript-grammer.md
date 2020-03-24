@@ -344,6 +344,31 @@ const [first, second] = array;
 console.log(first, second); // dog cat
 ```
 
+## Generator
+
+generator는 화살표 함수로 선언하지 않고 명시적으로 선언해야함.
+
+```javascript
+'use strict'
+
+// yield 
+// 함수를 끝내지 않고 반환한다.
+// return
+
+function* log () {
+	console.log(0, yield);
+	console.log(1, yield);
+	console.log(2, yield);
+}
+
+const gen = log()
+
+gen.next('zero')
+gen.next('first')
+gen.next('second')
+
+```
+
 # 참고 자료
 
 https://velog.io/@litien/Javascript-This-Binding

@@ -111,5 +111,7 @@ console.log(names); // ['Einstein', 'Kittie', 'Sally', 'John']
 
 제공된 테스트 함수를 만족하는 배열의 첫 번째 요소에 대한 인덱스를 반환
 
+
+
 # 참고 자료
 https://mylife365.tistory.com/491
