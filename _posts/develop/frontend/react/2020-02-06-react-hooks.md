@@ -16,6 +16,17 @@ React v 16.8에 새로 도입된 기능
 Class가 코드의 재사용성, 코드 구성을 좀 더 어렵게 만들 뿐만 아니라,
 자바스크립트에서 this가 어떻게 작동하는지 알아야하고, 이벤트 핸들러가 등록되는 방법을 기억해야한다.
 
+로직이 UI 및 리액트 life cycle에 너무 밀집하게 결합되어 있음.
+
+그래서 시도한 방법이 HOC (Higher Order Component)
+
+### HOC (Higher Order Component)
+화면에서 재사용 가능한 로직만 분리해서 component로 만들고, 재사용 불가능한 다른부분들은 parameter로 받아서 처리하는 방법
+
+\* HOC Issue : 로직을 분리해서 둘러싸고,둘러싸니 wrapper Hell
+
+life cycle에 여러 로직이 흩어지고, 함수는 단일 책임 원칙을 벗어나게 되고, 코드가 복잡해지고, 테스트는 점차 어려워지게 됨.
+
 
 ## Hook 종류
 
@@ -369,6 +380,72 @@ useEffect(async () => {});
 
 [https://github.com/rehooks/awesome-react-hooks](https://github.com/rehooks/awesome-react-hooks)
 
+
+#### Hooks 장점 예시
+```javascript
+// Before
+import { useState } from 'react';
+
+function Example() {
+  const [name, setName] = useState("이름");
+
+  return <input value={name} onChange={(e) => setName(e.target.value)} />;
+}
+```
+
+```javascript
+export default function Example() {
+  const name = useFormInput("name");
+  const email = useFormInput("email");
+
+  return <>
+    <input {...name} />
+    <input {...email} />
+  </>
+}
+
+export default function useFormInput(defaultValue: string) {
+  const [value, setValue] = useState(defaultValue);
+  function changeValue(e) {
+    setValue(e.target.value);
+  }
+  return {
+    value,
+    onChange : changeValue
+  }
+}
+```
+
+```javascript
+export function Example() {
+  const profile = useFetch(API.fetchProfile);
+  const friends = useFetch(API.fetchFriends);
+  
+  return <>
+    { profile.isLoading ? "Loading..."  : profile.data }
+    { friends.isLoading ? "Loading..."  : friends.data }
+    </>
+}
+
+export function useFetch(func, conditions = []) {
+  const [data, setData] = useState(null);
+
+  const fetch = () => {
+    func()
+      .then(response => {
+        setData(response);
+      })
+  };
+
+  useEffect(fetch, conditions);
+
+  const isLoading = (data == null);
+  return { data, isLoading };
+}
+```
+
 # 참고 문서
 
 https://velog.io/@velopert/react-hooks
+
+https://velog.io/@vies00/React-Hooks
