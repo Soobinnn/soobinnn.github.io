@@ -157,7 +157,7 @@ console.log(applyPerson.name); // Jack
 console.log(newPerson.name); // call
 ```
 
-## 화살표 함수
+## Arrow Function (화살표 함수)
 
 function 키워드를 사용해서 함수를 만든 것보다 간단히 함수를 표현 할 수 있다.
 
@@ -169,7 +169,14 @@ var foo = function() {console.log("foo")};
 
 // 화살표 함수
 var bar = () => console.log("bar);
+
+// 일반 함수
+function add (var1, var2) {
+	return var1 + var2
+}
+
 // 화살표 함수
+const add = (var1, var2) => var1 + var2
 ```
 
 ### 일반함수 , 화살표 함수
@@ -303,6 +310,27 @@ Prefixer.prototype.prefixArray = function(arr) {
 
 const pre = new Prefixer('Hi');
 console.log(pre.prefixArray(['Soo', 'Bin']));
+```
+
+#### 비교 예제3
+```javascript
+// 일반함수
+API.prototype.get = function(resource) {
+	var self = this;
+	return new Promise(function(resolve, reject) {
+		http.get(self.uri + resource, function(data) {
+			resolve(data);
+		})
+	})
+}
+
+// 화살표 함수
+API.prototype.get = (resource) =>
+	new Promise((resolve, reject) => {
+		http.get(this.uri + resource, (data) => {
+			resolve(data);
+		})
+	})
 ```
 
 ## Destructuring assignment (구조 분해 할당)
