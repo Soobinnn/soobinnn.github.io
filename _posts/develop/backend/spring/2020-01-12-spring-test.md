@@ -219,6 +219,61 @@ public class IntegrationTest{
 
 # TEST 예제
 
+- Controller
+- Service
+- Repository
+
+## Get Starting
+
+### Contorller
+```java
+package com.webatoz.backend.interfaces.board;
+
+import com.webatoz.backend.domain.Board;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping(value = "/boards")
+public class BoardController {
+
+    @GetMapping
+    public String list() {
+        Board board = new Board(1L,"hi");
+        return "hello";
+    }
+}
+```
+```java
+package com.webatoz.backend.interfaces.board;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.web.servlet.MockMvc;
+
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.junit.jupiter.api.Assertions.*;
+
+@RunWith(SpringRunner.class)
+@WebMvcTest(BoardController.class)
+class BoardControllerTest {
+    @Autowired
+    private MockMvc mvc;
+    
+    @Test
+    public void 게시판조회() throws Exception {
+        mvc.perform((get("/boards")))
+                .andExpect(status().isOk());
+    }
+}
+```
+
+
 # 참고 문서
 https://lalwr.blogspot.com/2019/09/spring-test.html
 
