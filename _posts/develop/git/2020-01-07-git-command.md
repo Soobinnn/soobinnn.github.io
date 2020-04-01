@@ -44,7 +44,7 @@ git checkout <branch name>
 -b
 
 ex) 원격에 있는 브랜치를 가져올 수 있다.
-git checkout -b feature/TESTAUTO-7049 develop
+git checkout -b feature/TESTAUTO-7049 origin/develop
 
 ```
 
