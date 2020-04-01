@@ -333,6 +333,28 @@ API.prototype.get = (resource) =>
 	})
 ```
 
+### example
+```javascript
+const getDiscount = (price, rate) => price * rate
+
+// f(x) = x + 1
+// g(x) = x^2
+// h(x) = f(g(x))
+const getDiscount = rate => price => rate * price
+
+const getTenpercentOff = getDiscount(0.1)(10000)
+
+const getTenpercentOff = getDiscount(0.1);
+
+getTenpercentOff(10000)
+
+var getDiscount = function getDiscount(rate) {
+	return function (price) {
+		return rate * price;
+	}
+}
+```
+
 ## Destructuring assignment (구조 분해 할당)
 
 ### 구조 분해
