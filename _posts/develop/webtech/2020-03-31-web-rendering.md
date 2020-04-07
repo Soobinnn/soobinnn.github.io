@@ -66,3 +66,5 @@ tags: web devlog rendering
 https://do-dam.tistory.com/entry/%EC%9B%B9-%ED%8E%98%EC%9D%B4%EC%A7%80%EC%9D%98-%EB%9E%9C%EB%8D%94%EB%A7%81-%EA%B3%BC%EC%A0%95-2%ED%8E%B8?category=765639
 
 https://d2.naver.com/helloworld/59361
+
+https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-tree-construction?hl=ko
