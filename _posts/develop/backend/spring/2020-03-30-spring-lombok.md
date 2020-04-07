@@ -2,7 +2,7 @@
 title: '[Spring] Lombok'
 date: 2020-03-30 16:00:00 -0400
 categories: devlog
-tags: spring devlog constructor inject
+tags: spring devlog constructor inject lombok
 ---
 
 
