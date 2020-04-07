@@ -395,7 +395,7 @@ console.log(first, second); // dog cat
 ```
 
 ## Generator
-
+### 정의
 generator는 화살표 함수로 선언하지 않고 명시적으로 선언해야함.
 
 ```javascript
@@ -431,6 +431,7 @@ console.log(g.next())
 console.log(g.next())
 console.log(g.next())
 ```
+
 
 # 참고 자료
 
