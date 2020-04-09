@@ -41,3 +41,29 @@ gradle init
 5. project name 입력
 6. package 입력
 ```
+
+## Description
+
+implementation	compile	
+수정 시 사용하는 모듈까지만 재빌드를 한다. 
+
+종속된 모듈의 하위 dependency를 패키지에 포함되지않는다. 
+
+api	compile	
+수정 시 연관된 모든 모듈을 재빌드 한다.
+
+종속된 하위 모듈 모두를 패키지에 포함한다. 
+
+compileOnly	provided	
+
+Gradle이 컴파일 클래스 경로에만 종속성을 추가합니다(빌드 출력에 추가되지 않음). 
+
+runtimeOnly	apk	
+
+Gradle이 런타임 시에 사용하도록 빌드 출력에만 종속성을 추가합니다. 
+
+annotationProcessor	compile	
+
+주석 프로세서인 라이브러리에 종속성을 추가하려면 반드시 annotationProcessor구성을 
+사용하여 주석 프로세서 클래스 경로에 추가해야 합니다. 그 이유는 이 구성을 사용하면 컴파일 
+클래스 경로를 주석 프로세서 클래스 경로와 분리하여 빌드 성능을 향상할 수 있기 때문입니다. 

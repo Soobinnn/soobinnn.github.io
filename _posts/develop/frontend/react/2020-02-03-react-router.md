@@ -62,15 +62,32 @@ Link
 history.push
 
 
-# install
+## install
 
 ```
 npm install --save react-router-dom
 ```
+## Description
 
-# start
+- BrowserRouter
 
-## 라우터 설정
+HTML5 히스토리 API를 사용하여 주소를 관리하는 라우터
+
+- Route
+
+요청 경로와ㅏ 렌더링할 컴포넌트를 설정한다.
+
+- Switch
+
+하위의 라우터 중 하나를 선택한다
+
+- Redirect
+
+요청 경로를 다른 경로로 리다이렉션한다.
+
+## Get Start
+
+### 라우터 설정
 
 ```javascript
 # src/index.js
@@ -184,3 +201,5 @@ react-transition-group
 https://john015.netlify.com/react-router-v-5-1-%EB%AC%B4%EC%97%87%EC%9D%B4-%EB%8B%AC%EB%9D%BC%EC%A1%8C%EC%9D%84%EA%B9%8C
 
 https://medium.com/@wdjty326/react-router-dom-v5-route-%EC%A0%84%ED%99%98-%EC%95%A0%EB%8B%88%EB%A9%94%EC%9D%B4%EC%85%98-%EC%B2%98%EB%A6%AC-935dfc6cc475
+
+https://www.daleseo.com/react-router-nested/

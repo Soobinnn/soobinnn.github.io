@@ -49,3 +49,7 @@ labels: ['1회차', '2회차', '3회차', '4회차', '5회차', '6회차', '7회
     라인 굴곡
 
 - 
+
+# 참고 문서
+
+https://codesandbox.io/s/zen-resonance-ef5o6?file=/src/MyChart.js:2380-2659
