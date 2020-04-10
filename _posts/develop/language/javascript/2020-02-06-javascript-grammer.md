@@ -396,8 +396,27 @@ console.log(first, second); // dog cat
 
 ## Generator
 ### 정의
+사용자의 요구에 따라 다른 시간 간격으로 여러 값을 반환할 수 있으며, 내부 상태를 관리할 수 있는 함수.
+
+단 한 번의 실행으로 함수의 끝까지 실행이 완료되는 일반 함수와는 달리 일시적으로 정지될 수 있고, 다시 시작될 수도 있다.
+
 generator는 화살표 함수로 선언하지 않고 명시적으로 선언해야함.
 
+Generator 함수는 generator를 반환한다. 
+
+Generator는 iterable, iterator를 따르는 객체이다.
+
+- yield 
+
+Generator 함수 실행을 일시적으로 정지시키며, yield 뒤에 오는 표현식은 Generator의 caller에게 반환된다.
+즉, 일반 함수의 return과 매우 유사하며
+
+여기서 제너레이터 함수는 Call이고, 이를 호출 하는 함수가 Caller이며,
+Caller는 Call의 yield 부분에서 다음 statment로 진행 할 지 여부를 제어한다. 
+
+
+
+### Example
 ```javascript
 'use strict'
 
@@ -438,3 +457,5 @@ console.log(g.next())
 https://velog.io/@litien/Javascript-This-Binding
 
 https://hanjungv.github.io/2018-02-03-1_JS_arrow_function/
+
+https://wonism.github.io/javascript-generator/
