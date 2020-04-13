@@ -9,7 +9,44 @@ tags: javascript devlog function
 
 ## Set
 
+## Hoisting
 
+자바스크립트에서 실행 context. 실행 단계가 어떻게 동작하는가에 대한 일반적인 생각
+
+변수 및 함수선언은 컴파일 단계에서 메모리에 저장되지만 자바스크립트가 어떤 코드 구문을 실행하기 전에 함수선언을 메모리에 저장하는 특징
+
+### Example
+```javascript
+// 일반적인 방법
+// 선언 후 호출하는 방법
+function say(word) {
+	consol.log(word)
+}
+say('hi');
+
+// Hoisting의 특징
+//자바스크립트가 어떤 코드 구문을 실행하기 전에 함수 선언을 메모리에 저장하는 특징 때문에
+//코드에서 선언하기 전에 함수를 사용할 수 있다.
+say('hi')
+function say(word) {
+	consol.log(word)
+}
+```
+
+## IIFE 
+
+즉시 실행 함수 표현
+
+정의 되자마자 즉시 실행되는 자바스크립트 함수
+```javascript
+(function() {
+	// 전역 스코프에 불필요한 코드 방지
+	// 다른 변수들이 접근하는 것을 막음
+	var lang = 'js';
+})();
+
+console.log(lang);
+```
 
 ## Binding
 
