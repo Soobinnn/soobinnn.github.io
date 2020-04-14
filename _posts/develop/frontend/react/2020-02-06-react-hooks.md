@@ -9,6 +9,9 @@ tags: react devlog hooks
 
 Hook를 이용하여 Class를 작성하지 않고 함수형에서 상태관리, React Component LifeCycle을 설정할 수 있게 하여 기존 함수형 컴포넌트에서 할 수 없었던 다양한 작업을 할 수 있게 해줌.
 
+기존의 this.state, didComponentMount() 등을 대체 하며
+HOC나 rendor props도 대체할 수 있다.
+
 React v 16.8에 새로 도입된 기능
 
 ## Why use Hooks?
@@ -26,6 +29,22 @@ Class가 코드의 재사용성, 코드 구성을 좀 더 어렵게 만들 뿐�
 \* HOC Issue : 로직을 분리해서 둘러싸고,둘러싸니 wrapper Hell
 
 life cycle에 여러 로직이 흩어지고, 함수는 단일 책임 원칙을 벗어나게 되고, 코드가 복잡해지고, 테스트는 점차 어려워지게 됨.
+
+
+### Store와 관계
+
+Rudux 핵심 구조는 Hook에서 useReducer를 통해 사용할 수 있기도 하지만 여러 컴포넌트의 상태를 조합하고 전달하는 건 다루는 범위가 아니다.
+
+mobx, redux 둘 다 상위 컴포넌트에서 스토어라는 트리 범위의 상태를 관리하는데 이건 리액트에서는
+컨텍스트를 통해 관리할 수 있는 것이고, Hook의 useContext를 통해 컨텍스트도 접근 할 수 있으므로
+Redux, Mobx는 컴포넌트 간 상태 관리에 관한 것, Hooks는 그것보다 하위에서 동작함.
+
+redux는 (redux-react-hook)[https://github.com/facebookincubator/redux-react-hook],  Mobx는 (mobx-react-lite)[https://github.com/mobxjs/mobx-react-lite]를 의존성에 추가하여 호환가능
+
+### 장점
+응집성과 모듈화
+Wrapper Hell 방지
+라이프사이클 메서드보다 단순함
 
 
 ## Hook 종류
