@@ -285,3 +285,5 @@ https://cheese10yun.github.io/spring-guide-test-1/
 https://cheese10yun.github.io/spring-about-test/
 
 https://itmore.tistory.com/entry/MockMvc-%EC%83%81%EC%84%B8%EC%84%A4%EB%AA%85
+
+https://jdm.kr/blog/222
