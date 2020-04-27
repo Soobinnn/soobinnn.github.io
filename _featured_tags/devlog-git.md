@@ -4,6 +4,6 @@ title: Git
 slug: git
 category: devlog
 menu: false
-order: 8
+order: 10
 header-img: "/img/git-logo.png"
 ---
