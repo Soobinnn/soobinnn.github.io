@@ -1,0 +1,6 @@
+---
+title: '[Dart] Dart Function'
+date: 2020-05-01 02:42:00 -0400
+categories: devlog
+tags: dart devlog function
+---
