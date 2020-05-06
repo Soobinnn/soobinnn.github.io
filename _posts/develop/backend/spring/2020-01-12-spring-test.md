@@ -149,13 +149,18 @@ instanceOf와는 다르게 매쳐의 값은 앞서 비교값의 타입의 자식
 ### Spring Test에서 지원하는 어노테이션
 - @RunWith(SpringJUnit4ClassRunner.class)
 : JUnit프레임워크의 테스트 실행방법을 확장할 때 사용하는 어노테이션
+어노태이션을 사용하면 JUnit에 내장된 러너를 사용하는 대신 어노테이션의 정의된 러너 클래스를 사용.
 
 SpringJUnit4ClassRunner라는 클래스를 지정해주면 JUnit이 테스트를 진행하는 중에 ApplicationContext를 만들고 관리하는 작업을 해줌.
 
 @RunWith 어노테이션은 각각의 테스트 별로 객체가 생성되더라도 Singleton의 ApplicationContext를 보장함.
 
 한 클래스내에 여러개의 테스트가 있더라도 어플리케이션 컨텍스트를 초기 한번만 로딩하여 사용하기 때문에, 여러개의 테스트가 있더라도 처음 테스트만 조금 느리고 그 뒤의 테스트들은 빠르다.
+(Junit은 각각의 테스트가 서로 영향을 주지 않고 독립적으로 실행됨을 원칙으로 하기에 @Test 마다 오브젝트를 생성한다.
 
+이와 같은 Junit의 특성으로 인하여 ApplicationContext도 매번 새로 생성되기 때문에 테스트가 느려지는 단점이 있다.)
+
+\* Junit5에선 @ExtendWith(SpringExtension.class)로 대체
 
 - @ContextConfiguration
 : 스프링 Bean 설정 파일의 위치를 지정할 떄 사용되는 어노테이션
@@ -217,6 +222,42 @@ public class IntegrationTest{
 
 ## MockMvc
 
+ajax, client 요청 내용을 controller에서 받아 처리하는 것과 같은 테스트
+
+참고 [MockMvc Doc](https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/test/web/servlet/MockMvc.html)
+
+__.perform()__
+
+ResultActions 인터페이스 리턴함.
+
+```java
+mvc.perform(get('/'))
+mvc.perform(get('/').param('id','2'))
+```
+
+__ResultActions__
+
+andExpect, andDo, andReturn 메소드 지원
+
+[ResultActions](https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/test/web/servlet/ResultActions.html)
+
+- andExpert
+
+assert 메소드와 유사
+```java
+.andExpect(status().isOk())
+.andExpect(content().contentType("application/json;charset=utf-8")))
+```
+
+- andDo
+요청에 대한 처리를 함.
+
+```java
+.andDo(print())
+```
+
+- andReturn
+테스트한 결과 객체를 받를 때 사용
 
 
 # TEST 예제
@@ -226,8 +267,8 @@ public class IntegrationTest{
 - Repository
 
 ## Get Starting
-
 ### Contorller
+__Code__
 ```java
 package com.webatoz.backend.interfaces.board;
 
@@ -247,6 +288,7 @@ public class BoardController {
     }
 }
 ```
+__Test Code__
 ```java
 package com.webatoz.backend.interfaces.board;
 
@@ -274,6 +316,19 @@ class BoardControllerTest {
     }
 }
 ```
+
+__@WebMvcTest(Controller.class)__
+
+MVC를 위한 테스트, 웹에서 테스트하기 힘든 Controller를 테스트하는데 적합함.
+
+웹상에서 요청과 응답에 대한 테스트 진행
+
+Security 혹은 필터까지 자동으로 테스트하며 수동으로 추가/삭제 가능
+
+@WebMvcTest 를 사용하면 MVC 관련된 설정인 @Controller, @ControllerAdvice, @JsonComponent, Filter, WebMvcConfigure, HandlerMethodArgumentResolver만 로드되기 때문에 @SpringBootTest보다 가볍게 테스트할 수 있다.
+
+
+
 
 
 # 참고 문서
