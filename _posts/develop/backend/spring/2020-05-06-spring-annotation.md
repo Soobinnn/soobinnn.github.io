@@ -10,12 +10,25 @@ tags: spring devlog annotation
 MVC의 View를 사용
 
 ## @ControllerAdvice
+@ExceptionHandler가 하나의 클래스에 대한 것이라면, @ControllerAdvice는 모든 @Cotroller즉, 전역에서 발생할 수 있는 예외를 잡아 처리해주는 annotation
 
 ## @ResponseBody
 
 ## @ResponseStatus
 
 ## @ExceptionHandler
+@Controller, @RestController가 적용된 Bean내에서 발생하는 예외를 잡아서 하나의 메소드에서 처리해주는 기능
+
+```java
+@ExceptionHandler(NullPoitnerException.class)
+public Object nullcheck(Exception e) {
+  ....
+}
+```
+- @Controller, @RestController에서만 적용가능하다
+- Return 타입은 자유롭게 해도된다.
+
+
 
 ## @RestController
 
