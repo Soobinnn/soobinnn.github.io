@@ -120,3 +120,5 @@ public class BoardRepositoryImpl implements BoardRepository {
   }
 }
 ```
+
+## 관계
