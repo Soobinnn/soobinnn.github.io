@@ -82,6 +82,104 @@ JDBC는 DB에 접근할 수 있도록 자바에서 제공하는 API
 
 모든 Java Data Access 기술의 근간 -> 모든 Persistance Framework는 내부적으로 JDBC API를 이용
 
+### Spring-data-jdbc
+
+O/R Mapping
+CrudRepository
+Aggregates, References
+
+No EntityManager(PersistenceContext)
+
+No Caching
+No Lazy Loading
+No Dirty traacking
+No Proxy
+
+Spring Data JDBC는 간단한 컨셉을 가지고있음.
+
+#### O/R Mapping
+
+- Annotation
+
+@Table : 메핑 테이블
+
+@id : PK 컬럼 매핑
+
+@Version : Version 컬럼 매핑
+
+@Column : 컬럼 매핑 OneToOne
+
+@Embedded : Embedded 객체 속성 컬럼 매핑
+
+@MappedCollection : OneToMany 관계 매핑
+  - idColumn : FK 컬럼 매핑 (default column name: "변수명")
+  - keyColumn : OrderBy 컬러 매핑 (default column name: "변수명_KEY")
+
+@PersistenceConstructor : 조회 결과 객체 복원 사용 생성자
+  - 생성자가 한개만 존재한다면, 선언하지 않아도 된다
+
+@ReadOnlyProperty : 읽기 전용 컬럼
+
+@Transient : 컬럼 매핑 하지 않는다
+  -@PersistenceConstructor 생성자 속성에 포함되면 안된다.
+
+@AccessType : 매핑 대상을 FIELD / PROPERTY로 지정
+
+- 특징
+
+Value Object 지원(Immutable)
+
+NamingStrategy 지원
+
+상속/다형성 매핑 미지원
+복합키 매핑 미지원
+AttributeConverter 미지원
+
+Spring Data JDBC 는 Entity 설계시 Aggregate 개념 적용을 강하게 주장함.
+
+- AggregateRoot에 하나의 Repository 구성
+  -> 하나의 집합체(Aggregate)는 하나의 Repository를 통해서 영속성을 관리함.
+
+- OneToOne, OneToMany 매핑 지원
+  -> FK는 연결 타겟 엔티티의 테이블에서 관리함.
+  -> OneToMany 매핑시 Set Collection 타입이라면, @MappedCollection의 KeyColumn은 매핑 되지 않는다.
+  -> 연관 관계 클래스에 @id는 선언하지 않아도 된다.(Table에 Column만 존재)
+
+- ManyToOne, ManyToMany 미지원
+  -> 집합체(Aggregate)의 개념에 위배되므로 향후에도 지원하지 않을 것으로 보인다.
+
+- 양뱡향 연관관계 매핑 금지
+  -> 양방향 관계 설정 시 대참사
+
+- Aggregate 간의 관계는 Reference Id로 관리
+  -> AggregateReference로 타입 지원 가능
+
+@Embedded.Nullable 
+: 객체 속성에 매핑되는 Column값이 모두 존재하지 않으면 Null로 복원
+
+@Embedded.Empty
+: 객체 속성에 매핑되는 COlumn값이 모두 존재하지 않으면, 빈 객첼 ㅗ복원
+
+\* Embedded 클래스 설계 및 설정 전략
+- 가능하면 Value Object(불변 객체)로 설계 (lombok: @Value)
+- 모든 속성 컬럼이 NULLABLE 하다면, NoArgsConstructor를 제공하고 @Embedded.Empty를 선언한다.
+
+- NOT-NULL컬럼이 존재한다면, AllArgsConstructor를 제공하고, @Embedded.Nullable을 선언
+
+#### TypeConvertor
+
+JDBC Driver에서 지원하지 않는 타입들은 Custom Converter를 작성해줘야함.
+
+JPA의 AttributeConverter 미지원
+
+#### DDL 관리
+Hibernate와 같은 자동 DDL 생성 기능은 없기 때문에,
+직접 DDL 을 정의하고 관리해야 함.
+-> Liquibase / Flyway 같은 Schema 관리 솔루션 사용
+
+### Spring-data-R@DBC
+
+
 ### Spring-data-jpa 
 
 JPA는 ORM을 위한 자바 EE 표준이며 Spring-Data-JPA는 JPA를 쉽게 사용하기 위해 스프링에서 제공하고 있는 프레임워크
