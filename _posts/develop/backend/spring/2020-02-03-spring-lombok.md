@@ -97,8 +97,85 @@ Exception 발생시 체크된 Throable로 감싸서 전달
 
 
 
+## 주의사항
+```java
+//example
+@Data
+@Entity
+@NoArgsConstructor
+public class Sales {
+
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
+
+  @ManyToOne
+  @JoinColumn(name="owner_id", referencedColumnName = "id")
+  private Owner owner;
+
+  private long salesPrice;
+
+  @OneToMany(fetch = FetchType.LAZY)
+  @JoinColumn(name = "sales_id")
+  private List<Payment> paymentList = new ArrayList<>();
+
+  private LocalDateTime paymentDate;
+
+  @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+  @CreationTimestamp
+  private LocalDateTime createdDate;
+
+  @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+  @UpdateTimestamp
+  private LocalDateTime updatedDate;
+
+  private String deleted;
+
+}
+```
+
+1. @Data를 지양한다.
+    -> 무분별한 Setter의 남용을 막고, 도메인 기능에 대한 메소드만 사용하도록
+
+2. Entity는 지켜야할 고유의 영역이다.
+    -> Entity를 변경하기 보다는 이 Entity를 사용하는 DTO를 사용하여 최대한 변경에 대응하기 쉽도록 한다.
+
+3. JPA에서는 프록시를 생성하기 위해서 기본 생성자를 반드시 하나를 생성해야한다.
+    -> 이때 접근 권한을 AccessLevel.PROTECTED설정하여 JPA에서의 Entity클래스 생성만 허용해준다.
+
+```java
+@Getter
+@Entity
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+public class Sales extends AbstractTimeEntity {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private Long salesPrice;
+
+    private LocalDateTime paymentDateTime;
+
+    private Boolean deleted;
+
+    @ManyToOne
+    @JoinColumn(name="owner_id", referencedColumnName = "id")
+    private Owner owner;
+
+    @OneToMany(mappedBy = "sales", cascade = CascadeType.ALL)
+    @JoinColumn(name = "sales_id")
+    private List<Payment> paymentList = new ArrayList<>();
+
+...
+}
+```
 
 # 참고 문서
 https://galid1.tistory.com/531
 
 https://kwonnam.pe.kr/wiki/java/lombok/pitfall
+
+https://woowabros.github.io/experience/2019/02/28/pilot-project-settle.html
+
+https://cheese10yun.github.io/lombok/
