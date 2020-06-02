@@ -7,6 +7,7 @@ tags: sonaqube infra install
 
 # 준비사항
 
+\* max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]
 ```
 # docker-composer를 사용한다면 composer에서 설정 가능
 # (composer설정은 아래에서 설명함.)
@@ -19,6 +20,9 @@ ulimit -u 4096
 vi /etc/sysctl.conf
 
 vm.max_map_count=262144 추가
+
+# 확인
+sysctl -p
 ```
 
 SonarQube7.9 설치 시 제약 조건 : https://docs.sonarqube.org/7.9/requirements/requirements/
@@ -29,7 +33,25 @@ SonarQube7.9 설치 시 제약 조건 : https://docs.sonarqube.org/7.9/requireme
 # 설치
 
 ## Install SonaQube on Docker
+### 8.3.1 버전 설치
 
+```
+docker run -d --name sonarqube \
+    -p 9000:9000 \
+    -e SONAR_JDBC_URL=... \
+    -e SONAR_JDBC_USERNAME=... \
+    -e SONAR_JDBC_PASSWORD=... \
+    -v /home/sonarqube/sonarqube_data:/opt/sonarqube/data \
+    -v /home/sonarqube/sonarqube_extensions:/opt/sonarqube/extensions \
+    -v /home/sonarqube/sonarqube_logs:/opt/sonarqube/logs \
+    <image_name>
+```
+### DB Driver Setting
+#### Postgres
+
+
+
+### 7.5 version
 ```
 docker pull sonarqube
 
@@ -49,7 +71,7 @@ $ docker run -d --name sonarqube \
 # http://<본인의  ip>:9000/sonar
 # 초기 ID/PW : admin / admin
 ```
-
+### error
 \*\* 접속 시 만약, 유지보수중이라는 창이뜬다면
 
 ```
@@ -75,6 +97,8 @@ http://ip:9000/setup 접속하여 Database 업데이트를 하면 작동된다.
 ```
 
 //그림위와 같이 뜨는 것을 확인 할 수 있다.
+
+
 
 ## SonarQube Setting
 

@@ -14,7 +14,7 @@ tags: jenkins infra docker install
 ```
 docker pull jenkins
 
-docker run --restart=always -d -p 9090:8080 -p 50000:50000 -v /home/jenkins:/var/jenkins_home:z --name jenkins -u root jenkins
+docker run --restart=always -d -p 9090:8080 -p 50000:50000 -v /home/jenkins:/var/jenkins_home:z --name jenkins -u root jenkins/jenkins
 
 # 실행 확인
 docker ps -a
@@ -64,12 +64,12 @@ docker stop jenkins
 docker rm jenkins
 
 #host의 docker.sock과 container의 연동
-docker run
-  --restart=always -d
-  -p 9090:8080 -p 50000:50000
-  -v /home/jenkins:/var/jenkins_home:z
-  -v /var/run/docker.sock:/var/run/docker.sock
-  --name jenkins -e TZ=Asia/Seoul -u root jenkins
+docker run \
+  --restart=always -d \
+  -p 9090:8080 -p 50000:50000 \
+  -v /home/jenkins:/var/jenkins_home:z \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  --name jenkins -e TZ=Asia/Seoul -u root jenkins/jenkins:lts-jdk11
 
 #jenkins 컨테이너에서 docker binary 설치
 wget https://get.docker.com/builds/Linux/x86_64/docker-17.05.0-ce.tgz

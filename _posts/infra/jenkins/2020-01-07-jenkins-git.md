@@ -56,3 +56,9 @@ GitHub에서 코드가 푸쉬 될 때마다 WebHook을 jenkins에 보내도록 �
 - 연결이 잘됬는지 왼쪽 아이콘이 보임. Jenkins에서는 GitHub Hook Log가 생김
 
 # GitLab
+
+
+# 참고 자료 
+https://jojoldu.tistory.com/442
+
+https://yaboong.github.io/jenkins/2018/05/14/github-webhook-jenkins/
