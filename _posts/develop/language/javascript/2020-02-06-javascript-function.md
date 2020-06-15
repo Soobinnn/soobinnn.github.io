@@ -115,3 +115,5 @@ console.log(names); // ['Einstein', 'Kittie', 'Sally', 'John']
 
 # 참고 자료
 https://mylife365.tistory.com/491
+
+https://c10106.tistory.com/1569
