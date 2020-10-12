@@ -14,7 +14,9 @@ tags: jenkins infra docker install
 ```
 docker pull jenkins
 
-docker run --restart=always -d -p 9090:8080 -p 50000:50000 -v /home/jenkins:/var/jenkins_home:z --name jenkins -u root jenkins/jenkins
+docker pull jenkins/jenkins:2.249.1-lts-jdk11
+
+docker run --restart=always -d -p 9090:8080 -p 50000:50000 -v /home/jenkins:/var/jenkins_home:z --name jenkins -u root jenkins/jenkins:2.249.1-lts-jdk11
 
 # 실행 확인
 docker ps -a
