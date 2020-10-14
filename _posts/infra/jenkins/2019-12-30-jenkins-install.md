@@ -12,7 +12,9 @@ tags: jenkins infra docker install
 ## 설치
 
 ```
+
 docker run --restart=always -d -p 9090:8080 -p 50000:50000 -v /home/jenkins:/var/jenkins_home:z -v /var/run/docker.sock:/var/run/docker.sock --name jenkins -e TZ=Asia/Seoul -u root jenkins/jenkins:2.249.2-lts-jdk11
+
 
 # 실행 확인
 docker ps -a
